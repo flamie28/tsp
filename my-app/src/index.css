@@ -3,13 +3,11 @@ body {
   background-image: url(assets/logotip.svg);
   background-repeat: no-repeat;
   background-color: #161616;
-  background-position: 80px 50px;
+  background-position: 80px 43px;
 }
 
 .container {
   width: 480px;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(200deg, transparent 0%, #44bb4e, #98f132) border-box;
   border: 2px solid transparent;
   padding: 32px 24px;
   font-size: 14px;
@@ -22,6 +20,11 @@ body {
   border-radius: 16px;
   margin: 0 auto;
   box-shadow: -8px 8px 16px 2px rgba(50, 50, 50, 1);
+  --angle: 200deg;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(var(--angle), transparent 0%, #44bb4e, #98f132) border-box;
+  border: 2px solid transparent;
+  animation: rotateGradient 20s linear infinite;
 }
 
 @keyframes slideFadeIn {
@@ -58,9 +61,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #717171;
+  color: #727272;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 2px;
 }
 .form-row {
@@ -77,7 +80,7 @@ body {
   width: 120px;
   padding: 10px 12px;
   border-radius: 8px;
-  color: #fff;
+  color: #ffffff;
   font-family: inherit;
   background-color: transparent;
   border: 1px solid #414141;
@@ -127,7 +130,7 @@ body {
 
 .button:hover {
   background-color: #44bb4e;
-  border-color: #fff;
+  border-color: #494949;
   color: #212121;
 }
 
@@ -203,4 +206,19 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; 
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 200deg;
+}
+
+@keyframes rotateGradient {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
 }
