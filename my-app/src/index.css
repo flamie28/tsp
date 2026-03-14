@@ -3,34 +3,34 @@ body {
   margin: 0;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
 .logo {
   display: block;
-  position: fixed;
-  top: 50px;
-  left: 80px;
-  width: 120px;
-  height: 60px;
+  width: 25px;
+  height: 25px;
   background-image: url(assets/logotip.svg);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   animation: breath 3s ease-in-out infinite;
-  pointer-events: auto;
-  z-index: 1;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 @keyframes breath {
   0% {
-    transform: scale(1);
     filter: drop-shadow(0 0 5px rgba(68, 187, 78, 0.2));
   }
   50% {
-    transform: scale(1);
-    filter: drop-shadow(0 0 25px #44bb4e);
+    filter: drop-shadow(0 0 7px #44bb4e);
   }
   100% {
-    transform: scale(1);
     filter: drop-shadow(0 0 5px rgba(68, 187, 78, 0.2));
   }
 }
@@ -88,10 +88,11 @@ body {
 }
 
 .title {
-  margin: 0 0 8px 0;
-  font-size: 1.5rem;
-  font-weight: 600;
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 450;
   color: #fff;
+  flex: 1;
 }
 
 .form-group {
@@ -225,7 +226,7 @@ body {
 }
 
 @media (max-width: 520px) {
-  .container {
+    .container {
     width: 100%;
     padding: 24px 16px;
   }

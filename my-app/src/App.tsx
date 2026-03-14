@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-  interface BinomialResult {
+interface BinomialResult {
   params: { u: number; d: number; p: number; q: number };
   bondPrice10: number;
   bondPrice7: number;
@@ -134,7 +134,10 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="title">Модель биномиальной процентной ставки</h1>
+      <div className="header-row">
+        <a href="https://tpu.ru" className="logo" target="_blank" rel="noopener noreferrer"></a>
+        <h1 className="title">Модель биномиальной процентной ставки</h1>
+      </div>
 
       <div className="form-group">
         <div className='form-row'>
