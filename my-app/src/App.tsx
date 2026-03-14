@@ -183,7 +183,7 @@ function App() {
           <table className="result-table">
             <tbody>
               <tr className="border-top">
-                <td className="label">Cтоимость {n}-летней бескупонной облигации P(0,{n})</td>
+                <td className="label">Cтоимость {n}-летней бескупонной облигации</td>
                 <td className="value">{result.bondPrice10.toFixed(6)}</td>
               </tr>
               <tr>

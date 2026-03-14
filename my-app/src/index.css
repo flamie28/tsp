@@ -1,9 +1,38 @@
 body {
-  background-size: 6%;
+    background-color: #161616;
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  position: fixed;
+  top: 50px;
+  left: 80px;
+  width: 120px;
+  height: 60px;
   background-image: url(assets/logotip.svg);
   background-repeat: no-repeat;
-  background-color: #161616;
-  background-position: 80px 43px;
+  background-size: contain;
+  background-position: center;
+  animation: breath 3s ease-in-out infinite;
+  pointer-events: auto;
+  z-index: 1;
+  text-decoration: none;
+}
+
+@keyframes breath {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(68, 187, 78, 0.2));
+  }
+  50% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 25px #44bb4e);
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(68, 187, 78, 0.2));
+  }
 }
 
 .container {
@@ -27,6 +56,26 @@ body {
   animation: rotateGradient 20s linear infinite;
 }
 
+@keyframes rotateGradient {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 200deg;
+}
+
+.result-box {
+  animation: slideFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform-origin: top center;
+}
+
 @keyframes slideFadeIn {
   0% {
     opacity: 0;
@@ -36,11 +85,6 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
-
-.result-box {
-  animation: slideFadeIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  transform-origin: top center;
 }
 
 .title {
@@ -206,19 +250,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0; 
-}
-
-@property --angle {
-  syntax: '<angle>';
-  inherits: false;
-  initial-value: 200deg;
-}
-
-@keyframes rotateGradient {
-  0% {
-    --angle: 0deg;
-  }
-  100% {
-    --angle: 360deg;
-  }
 }
